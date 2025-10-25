@@ -1,0 +1,28 @@
+{
+  "name": "enver",
+  "image": "rust:slim-bookworm",
+  "runArgs": [
+    "--env-file=.devcontainer/.env"
+  ],
+  "remoteUser": "user",
+  "workspaceFolder": "/home/user/app",
+  // "onCreateCommand": ".devcontainer/onCreateCommand.sh", // コンテナ作成直後に実行されるスクリプト
+  "mounts": [
+    "source=${localWorkspaceFolder},target=${containerWorkspaceFolder},type=bind" // ワークスペース
+  ],
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "username": "user",
+      "userGid": "1000",
+      "userUid": "1000"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "oderwat.indent-rainbow",
+        "streetsidesoftware.code-spell-checker"
+      ]
+    }
+  }
+}
